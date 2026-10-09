@@ -1,5 +1,6 @@
 // API mode: "mock" (local demo data, default) or "live" (Spring Boot REST API via /api proxy).
-export const MODE = import.meta.env.VITE_API_MODE === 'live' ? 'live' : 'mock';
+// API mode: mock or live
+export const MODE = import.meta.env.VITE_API_MODE || 'mock';
 export const API_BASE = import.meta.env.VITE_API_URL || '';
 export const isMock = MODE === 'mock';
 // Frontend-only demo credentials. In live mode the seeded backend users are used instead.

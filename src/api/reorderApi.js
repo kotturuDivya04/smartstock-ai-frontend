@@ -1,9 +1,7 @@
 import { http } from './http';
 
-// GET /api/reorders/recommendations — auto-generates fresh recommendations first
+// GET /api/reorders/recommendations — fetch existing recommendations
 export async function getRecommendations() {
-  await http('/api/reorders/stale', { method: 'DELETE' }).catch(() => {});
-  await http('/api/reorders/generate', { method: 'POST' }).catch(() => {});
   return http('/api/reorders/recommendations');
 }
 
